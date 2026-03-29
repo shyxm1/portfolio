@@ -726,18 +726,35 @@ img {
 }
 
 /* =========================================
-   4. CERTIFICATIONS
+   CERTIFICATIONS SECTION (FINAL CLEAN)
    ========================================= */
-//* =========================================
-   CERTIFICATIONS SECTION (CLEAN VERSION)
-   ========================================= */
-/* IMAGE WRAPPER */
+
+/* ===== FEATURED CERTIFICATE ===== */
+.featured-cert {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    padding: 2rem;
+    border-radius: 25px;
+
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 30px rgba(102, 252, 241, 0.15);
+}
+
+/* LEFT IMAGE CONTAINER */
+.cert-left {
+    flex-shrink: 0;
+}
+
+/* IMAGE WRAPPER (IMPORTANT) */
 .cert-img {
     position: relative;
     width: 320px;
     height: 220px;
     overflow: hidden;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 /* IMAGE */
@@ -769,7 +786,7 @@ img {
     transition: 0.3s ease;
 }
 
-/* HOVER EFFECT */
+/* HOVER ONLY ON IMAGE */
 .cert-img:hover img {
     transform: scale(1.05);
 }
@@ -778,57 +795,36 @@ img {
     opacity: 1;
 }
 
-/* ===== FEATURED CERTIFICATE (TOP) ===== */
-.featured-cert {
-    display: flex;
-    align-items: center;   /* center vertically */
-    gap: 3rem;
-
-    padding: 2rem;
-    border-radius: 25px;
-
-    border: 1px solid var(--neon-blue);
-    box-shadow: 0 0 30px rgba(102, 252, 241, 0.15);
-}
-
-.cert-left img {
-    width: 300px;
-    height: 220px;
-    object-fit: contain;
-
-    background: #fff;
-    padding: 10px;
-    border-radius: 10px;
-}
-/* Right content */
+/* RIGHT CONTENT */
 .cert-right {
     flex: 1;
 }
 
 .cert-right h3 {
-    font-size: 1.8rem;   /* bigger title */
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
 }
 
 .cert-right .issuer {
     font-size: 1rem;
+    color: var(--text-muted);
 }
 
-
-/* ===== CERTIFICATES GRID (BOTTOM 3 CARDS) ===== */
+/* ===== BOTTOM CERTIFICATES GRID ===== */
 .certs-grid {
     margin-top: 3rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal cards */
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-/* Card uniformity */
+/* NORMAL CARDS */
 .certs-grid .project-card {
     transform: none;
     opacity: 1;
 }
 
-/* Image styling */
+/* IMAGE INSIDE CARDS */
 .certs-grid .project-img {
     height: 220px;
 }
@@ -842,22 +838,11 @@ img {
     border-radius: 10px;
 }
 
-/* Hover effect */
+/* HOVER EFFECT */
 .certs-grid .project-card:hover {
     transform: translateY(-8px);
 }
 
-@media (max-width: 768px) {
-    .featured-cert {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .cert-left img {
-        width: 100%;
-        max-width: 350px;
-    }
-}
 /* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
     .featured-cert {
@@ -865,15 +850,15 @@ img {
         text-align: center;
     }
 
-    .cert-left img {
+    .cert-img {
         width: 100%;
-        height: auto;
+        max-width: 350px;
     }
 }
 
 @media (max-width: 768px) {
     .certs-grid {
-        grid-template-columns: 1fr; /* stack cards */
+        grid-template-columns: 1fr;
     }
 }
 
